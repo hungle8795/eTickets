@@ -105,11 +105,11 @@ namespace eTickets.Data
                             Description = "This is the Scoob movie desciption",
                             Price = 39.50,
                             ImageURL = "http://dotnethow.net/images/movies/movie-6.jpeg",
-                            StartDate = DateTime.Now.AddDays(-10),
-                            EndDate = DateTime.Now.AddDays(-2),
+                            StartDate = DateTime.Now.AddDays(-10).ToUniversalTime(),
+                            EndDate = DateTime.Now.AddDays(-2).ToUniversalTime(),
+                            MovieCategory = MovieCategory.Drama,
                             CinemaId = 1,
-                            ProducerId = 3,
-                            MovieCategory = MovieCategory.Drama
+                            ProducerId = 1
                         },
                         new Movie()
                         {
@@ -117,11 +117,11 @@ namespace eTickets.Data
                             Description = "This is the Cold Soles movie desciption",
                             Price = 39.50,
                             ImageURL = "http://dotnethow.net/images/movies/movie-7.jpeg",
-                            StartDate = DateTime.Now.AddDays(3),
-                            EndDate = DateTime.Now.AddDays(20),
-                            CinemaId = 1,
-                            ProducerId = 5,
-                            MovieCategory = MovieCategory.Comedy
+                            StartDate = DateTime.Now.AddDays(3).ToUniversalTime(),
+                            EndDate = DateTime.Now.AddDays(20).ToUniversalTime(),
+                            MovieCategory = MovieCategory.Comedy,
+                            CinemaId = 2,
+                            ProducerId = 2
                         },
                         new Movie()
                         {
@@ -129,11 +129,11 @@ namespace eTickets.Data
                             Description = "This is the Sco movie desciption",
                             Price = 39.50,
                             ImageURL = "http://dotnethow.net/images/movies/movie-8.jpeg",
-                            StartDate = DateTime.Now.AddDays(1),
-                            EndDate = DateTime.Now.AddDays(2),
-                            CinemaId = 1,
-                            ProducerId = 2,
-                            MovieCategory = MovieCategory.Documentory
+                            StartDate = DateTime.Now.AddDays(1).ToUniversalTime(),
+                            EndDate = DateTime.Now.AddDays(2).ToUniversalTime(),
+                            MovieCategory = MovieCategory.Documentory,
+                            CinemaId = 3,
+                            ProducerId = 3
                         }
                     );
                     context.SaveChanges();
@@ -145,18 +145,18 @@ namespace eTickets.Data
                     context.Actor_Movies.AddRange(
                         new Actor_Movie()
                         {
+                            ActorId = 1,
+                            MovieId = 1
+                        },
+                        new Actor_Movie()
+                        {
+                            ActorId = 2,
+                            MovieId = 2
+                        },
+                        new Actor_Movie()
+                        {
                             ActorId = 3,
-                            MovieId = 6
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = 4,
-                            MovieId = 6
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = 5,
-                            MovieId = 6
+                            MovieId = 3
                         }
                     );
                     context.SaveChanges();
