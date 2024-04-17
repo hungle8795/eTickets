@@ -36,7 +36,7 @@ namespace eTickets.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
